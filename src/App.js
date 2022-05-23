@@ -10,12 +10,16 @@ const App = () => {
         setModalActive(!modalActive)
     }
 
+    const propagationHandler = (e) => {
+        e.stopPropagation()
+    }
+
     return (
         <div className={'app'}>
             <div>
                 <button onClick={modalActiveHandler}>click me</button>
             </div>
-            <Modal modalActive={modalActive} modalActiveHandler={modalActiveHandler}>
+            <Modal propagationHandler={propagationHandler} modalActive={modalActive} modalActiveHandler={modalActiveHandler}>
                 <div>
                     <input type="text" placeholder={'name'}/>
                 </div>

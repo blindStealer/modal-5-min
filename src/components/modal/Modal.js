@@ -1,11 +1,11 @@
 import React from 'react';
 import './Modal.css'
-const Modal = ({children, modalActive, modalActiveHandler}) => {
+const Modal = ({children, modalActive, modalActiveHandler,propagationHandler}) => {
 
 
     return (
-        <div className={modalActive ? 'modal active' : 'modal'}>
-            <div className="modal__content">
+        <div onClick={ modalActiveHandler} className={modalActive ? 'modal active' : 'modal'}>
+            <div onClick={propagationHandler} className="modal__content">
                 {children}
             </div>
         </div>
